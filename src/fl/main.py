@@ -55,13 +55,13 @@ if __name__ == '__main__':
 
     is_cover = True
     # 保存配置文件
-    if os.path.exists("../results/" + global_config["experiment"] + "config.json"):
-        is_cover = input("实验路径已存在config.json，是否覆盖(y/n):")
-        if is_cover == 'y' or is_cover == 'Y':
-            is_cover = True
-        else:
-            print("config.json将不会被存储")
-            is_cover = False
+    # if os.path.exists("../results/" + global_config["experiment"] + "config.json"):
+    #     is_cover = input("Experiment path already exists config.json，test(y/n):")
+    #     if is_cover == 'y' or is_cover == 'Y':
+    #         is_cover = True
+    #     else:
+    #         print("config.json will not be stored")
+    #         is_cover = False
 
     # 初始化wandb
     if wandb_config["enabled"]:
@@ -118,9 +118,9 @@ if __name__ == '__main__':
     saveAns("../results/" + global_config["experiment"] + "accuracy.txt", list(accuracy_list))
     saveAns("../results/" + global_config["experiment"] + "loss.txt", list(loss_list))
     saveAns("../results/" + global_config["experiment"] + "time.txt", end_time - start_time)
-    result_to_markdown("../results/" + global_config["experiment"] + "实验阐述.md", config)
+    result_to_markdown("../results/" + global_config["experiment"] + "test.md", config)
     if wandb_config['enabled']:
         saveAns(os.path.join(wandb.run.dir, "accuracy.txt"), list(accuracy_list))
         saveAns(os.path.join(wandb.run.dir, "loss.txt"), list(loss_list))
         saveAns(os.path.join(wandb.run.dir, "time.txt"), end_time - start_time)
-        result_to_markdown(os.path.join(wandb.run.dir, "实验阐述.md"), config)
+        result_to_markdown(os.path.join(wandb.run.dir, "test.md"), config)

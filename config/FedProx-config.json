@@ -1,6 +1,6 @@
 {
   "wandb": {
-    "enabled": false,
+    "enabled": true,
     "project": "FedProx",
     "name": "1"
   },

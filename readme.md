@@ -472,3 +472,11 @@ QQ: 527707607
 邮箱: desperado@qq.com
 
 欢迎对项目提出建议～
+
+# Morten og Andreas
+
+## Packages
+
+### Torch/Torch vision
+- For CUDA 11.6 -> get nightly binaries:
+  - pip install torch --pre --extra-index-url https://download.pytorch.org/whl/nightly/cu116
